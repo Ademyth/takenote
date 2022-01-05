@@ -33,10 +33,10 @@ export const ContextMenuOption: React.FC<ContextMenuOptionProps> = ({
     event: React.MouseEvent<Element, MouseEvent> & React.KeyboardEvent<Element>
   ) => {
     handler(event)
-    setOptionsId('')
+    setOptionsId('0')
   }
 
-  return (
+ } return (
     <div
       data-testid={dataTestID}
       className={optionType === 'delete' ? 'nav-item delete-option' : 'nav-item'}
@@ -45,9 +45,7 @@ export const ContextMenuOption: React.FC<ContextMenuOptionProps> = ({
       onKeyPress={optionHandler}
       tabIndex={0}
       {...rest}
-    >
+      >
       <IconCmp className="nav-item-icon" size={18} />
       {text}
-    </div>
   )
-}
